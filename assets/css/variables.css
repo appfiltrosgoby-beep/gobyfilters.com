@@ -11,39 +11,43 @@
   -------------------------------------------------- */
 
   /* Azules corporativos */
-  --color-primary:        #0D3B6E;   /* Azul oscuro principal */
-  --color-primary-dark:   #082C54;   /* Azul oscuro hover/activo */
-  --color-primary-light:  #1A5EA8;   /* Azul corporativo medio */
-  --color-accent:         #1E76C5;   /* Azul acento / links */
+  --color-primary:        #0B2D5C;   /* Azul oscuro principal */
+  --color-primary-dark:   #071D3A;   /* Azul oscuro hover/activo */
+  --color-primary-light:  #1565C0;   /* Azul corporativo medio */
+  --color-accent:         #1A73E8;   /* Azul acento / links */
 
   /* Verde WhatsApp / Acción */
   --color-whatsapp:       #25D366;
   --color-whatsapp-dark:  #1DA851;
   --color-success:        #25D366;
 
-  /* Neutros */
+  /* Neutros (escala invertida para tema oscuro) */
   --color-white:          #FFFFFF;
   --color-off-white:      #F8FAFC;
-  --color-gray-50:        #F1F5F9;
-  --color-gray-100:       #E2E8F0;
-  --color-gray-200:       #CBD5E1;
-  --color-gray-300:       #94A3B8;
-  --color-gray-400:       #64748B;
-  --color-gray-500:       #475569;
-  --color-gray-600:       #334155;
-  --color-gray-700:       #1E293B;
-  --color-dark:           #0F172A;   /* Texto principal */
+  --color-gray-50:        #1E293B;
+  --color-gray-100:       #334155;
+  --color-gray-200:       #475569;
+  --color-gray-300:       #64748B;
+  --color-gray-400:       #94A3B8;
+  --color-gray-500:       #CBD5E1;
+  --color-gray-600:       #E2E8F0;
+  --color-gray-700:       #F1F5F9;
+  --color-dark:           #F8FAFC;   /* Texto principal (claro sobre fondo oscuro) */
 
   /* Estados */
   --color-error:          #EF4444;
   --color-warning:        #F59E0B;
   --color-info:           --color-accent;
 
+  /* Texto/íconos de marca legibles sobre superficies oscuras (reemplaza --color-primary como texto) */
+  --color-heading:        var(--color-accent);
+
   /* Fondos */
-  --color-bg-primary:     var(--color-white);
+  --color-bg-primary:     #0A1422;
   --color-bg-secondary:   var(--color-gray-50);
   --color-bg-dark:        var(--color-primary);
-  --color-bg-overlay:     rgba(13, 59, 110, 0.85);
+  --color-bg-overlay:     rgba(11, 45, 92, 0.85);
+  --color-surface:        #14213A;   /* Cards, header, inputs */
 
   /* --------------------------------------------------
      TIPOGRAFÍA
@@ -147,7 +151,7 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.18);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
-  --shadow-primary: 0 4px 14px rgba(13, 59, 110, 0.25);
+  --shadow-primary: 0 4px 14px rgba(11, 45, 92, 0.25);
   --shadow-whatsapp: 0 4px 14px rgba(37, 211, 102, 0.35);
 
   /* --------------------------------------------------
@@ -190,7 +194,7 @@
 
   --header-height:        80px;
   --header-height-mobile: 64px;
-  --header-bg:            var(--color-white);
-  --header-bg-scrolled:   var(--color-white);
+  --header-bg:            var(--color-surface);
+  --header-bg-scrolled:   var(--color-surface);
   --header-shadow-scrolled: var(--shadow-md);
 }

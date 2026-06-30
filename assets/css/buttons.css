@@ -65,7 +65,7 @@
   background-color: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(13, 59, 110, 0.35);
+  box-shadow: 0 6px 20px rgba(11, 45, 92, 0.35);
 }
 
 .btn--primary:active {
@@ -76,13 +76,13 @@
 /* Secundario — Outline azul */
 .btn--secondary {
   background-color: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: var(--color-heading);
+  border-color: var(--color-heading);
 }
 
 .btn--secondary:hover,
 .btn--secondary:focus-visible {
-  background-color: var(--color-primary);
+  background-color: var(--color-heading);
   color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: var(--shadow-primary);
@@ -142,7 +142,7 @@
 
 .btn--text:hover,
 .btn--text:focus-visible {
-  color: var(--color-primary);
+  color: var(--color-heading);
   text-decoration: underline;
   transform: none;
 }

@@ -48,7 +48,7 @@
 .text-left    { text-align: left; }
 .text-right   { text-align: right; }
 
-.text-primary  { color: var(--color-primary); }
+.text-primary  { color: var(--color-heading); }
 .text-accent   { color: var(--color-accent); }
 .text-muted    { color: var(--color-gray-400); }
 .text-white    { color: var(--color-white); }
@@ -85,7 +85,7 @@
   font-family: var(--font-secondary);
   font-size: var(--text-3xl);
   font-weight: var(--font-bold);
-  color: var(--color-primary);
+  color: var(--color-heading);
   line-height: var(--leading-tight);
   max-width: 20ch;
 }

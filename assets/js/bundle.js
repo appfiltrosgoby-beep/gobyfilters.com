@@ -524,6 +524,65 @@
   }
 
   /* ============================================================
+     FORMULARIO PQR — Peticiones, Quejas y Reclamos
+  ============================================================ */
+
+  function initPQRForm() {
+    const form = document.querySelector('[data-pqr-form]');
+    if (!form) return;
+
+    const successEl  = document.getElementById('pqr-success');
+    const radicadoEl = document.getElementById('pqr-radicado');
+    const requiredFields = form.querySelectorAll('[required]');
+
+    function validateField(field) {
+      const errorEl = document.getElementById(`${field.id}-error`);
+      const isEmpty = !field.value.trim();
+
+      field.classList.toggle('form-input--error', isEmpty);
+      field.setAttribute('aria-invalid', isEmpty ? 'true' : 'false');
+
+      if (errorEl) {
+        errorEl.textContent = isEmpty ? (field.type === 'checkbox' ? 'Debe aceptar la política de datos.' : 'Este campo es obligatorio.') : '';
+      }
+
+      return !isEmpty;
+    }
+
+    requiredFields.forEach((field) => {
+      field.addEventListener('change', () => validateField(field));
+      field.addEventListener('input',  () => validateField(field));
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let valid = true;
+      requiredFields.forEach((field) => {
+        if (!validateField(field)) valid = false;
+      });
+
+      if (!valid) {
+        form.querySelector('.form-input--error')?.focus();
+        return;
+      }
+
+      const submitBtn = form.querySelector('[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando…';
+
+      /* Simulate async dispatch — replace with real fetch() in WordPress */
+      setTimeout(() => {
+        const radicado = 'GOBY-' + new Date().getFullYear() + '-' + String(Date.now()).slice(-6);
+        if (radicadoEl) radicadoEl.textContent = radicado;
+        form.hidden = true;
+        if (successEl) successEl.hidden = false;
+        successEl?.focus();
+      }, 1200);
+    });
+  }
+
+  /* ============================================================
      INIT
   ============================================================ */
 
@@ -537,6 +596,7 @@
     initScrollToTop();
     initClientsLoop();
     initForms();
+    initPQRForm();
   });
 
 })();
