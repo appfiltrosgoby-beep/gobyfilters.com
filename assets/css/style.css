@@ -1,0 +1,204 @@
+/* ============================================================
+   GOBY FILTERS — Hoja de estilos principal
+   Importa todos los módulos en orden correcto.
+   En WordPress: se registra con wp_enqueue_style().
+   ============================================================ */
+
+/* 1. Tokens de diseño */
+@import url('./variables.css');
+
+/* 2. Reset */
+@import url('./reset.css');
+
+/* 3. Componentes globales */
+@import url('./buttons.css');
+
+/* 4. Estructura */
+@import url('./header.css');
+@import url('./footer.css');
+
+/* 5. Secciones y contenido */
+@import url('./hero.css');
+@import url('./cards.css');
+@import url('./sections.css');
+
+/* 6. Responsive (siempre al final) */
+@import url('./responsive.css');
+
+/* ============================================================
+   UTILIDADES GLOBALES
+   Clases de uso general que no pertenecen a un componente.
+   ============================================================ */
+
+/* Contenedor centrado */
+.container {
+  width: 100%;
+  max-width: var(--container-2xl);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.container--sm  { max-width: var(--container-sm); }
+.container--md  { max-width: var(--container-md); }
+.container--lg  { max-width: var(--container-lg); }
+.container--xl  { max-width: var(--container-xl); }
+
+/* Textos */
+.text-center  { text-align: center; }
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
+
+.text-primary  { color: var(--color-primary); }
+.text-accent   { color: var(--color-accent); }
+.text-muted    { color: var(--color-gray-400); }
+.text-white    { color: var(--color-white); }
+.text-dark     { color: var(--color-dark); }
+
+/* Fondos */
+.bg-white     { background-color: var(--color-white); }
+.bg-light     { background-color: var(--color-bg-secondary); }
+.bg-primary   { background-color: var(--color-primary); }
+.bg-dark      { background-color: var(--color-dark); }
+
+/* Eyebrow — etiqueta pequeña sobre títulos */
+.eyebrow {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.eyebrow--white {
+  color: var(--color-white);
+  opacity: 0.75;
+}
+
+.eyebrow--green {
+  color: var(--color-whatsapp);
+}
+
+/* Heading section */
+.section-heading {
+  font-family: var(--font-secondary);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+  line-height: var(--leading-tight);
+  max-width: 20ch;
+}
+
+.section-heading--white {
+  color: var(--color-white);
+}
+
+.section-heading--center {
+  max-width: none;
+  text-align: center;
+}
+
+/* Subtítulo de sección */
+.section-subtitle {
+  font-size: var(--text-md);
+  color: var(--color-gray-500);
+  line-height: var(--leading-relaxed);
+  max-width: 60ch;
+}
+
+.section-subtitle--white {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.section-subtitle--center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+/* Header de sección (eyebrow + heading + subtitle) */
+.section-header {
+  margin-bottom: var(--space-12);
+}
+
+.section-header--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Separador decorativo */
+.section-separator {
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-whatsapp));
+  border-radius: var(--radius-full);
+  margin-block: var(--space-4);
+}
+
+.section-separator--center {
+  margin-inline: auto;
+}
+
+/* Divider horizontal */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Flex y Grid helpers */
+.flex        { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between{ display: flex; align-items: center; justify-content: space-between; }
+.grid        { display: grid; }
+
+/* Gaps */
+.gap-4  { gap: var(--space-4); }
+.gap-6  { gap: var(--space-6); }
+.gap-8  { gap: var(--space-8); }
+
+/* Visibility */
+.hidden         { display: none; }
+.visually-hidden { /* ver reset.css .sr-only */ }
+
+/* Animaciones de entrada (gestionadas desde animations.js) */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll--delay-1 { transition-delay: 100ms; }
+.animate-on-scroll--delay-2 { transition-delay: 200ms; }
+.animate-on-scroll--delay-3 { transition-delay: 300ms; }
+.animate-on-scroll--delay-4 { transition-delay: 400ms; }
+.animate-on-scroll--delay-5 { transition-delay: 500ms; }
+
+/* Fade-in simple */
+.fade-in {
+  animation: fadeIn var(--duration-slow) var(--ease-out) both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Slide-up simple */
+.slide-up {
+  animation: slideUp var(--duration-slow) var(--ease-out) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

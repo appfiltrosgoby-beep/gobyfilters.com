@@ -1,0 +1,143 @@
+/* ============================================================
+   GOBY FILTERS — Responsive global
+   Ajustes tipográficos y de layout transversales.
+   Los breakpoints específicos de cada componente están
+   al final de su propio archivo CSS.
+   ============================================================ */
+
+/* --------------------------------------------------
+   Escala tipográfica responsive
+-------------------------------------------------- */
+
+/* 1920px — pantallas grandes */
+@media (min-width: 1920px) {
+  :root {
+    --text-base: 1.0625rem;  /* 17px */
+    --container-padding-x: var(--space-12);
+  }
+}
+
+/* 1440px — desktop estándar */
+@media (max-width: 1440px) {
+  :root {
+    --container-2xl: 1360px;
+  }
+}
+
+/* 1280px — laptop */
+@media (max-width: 1280px) {
+  :root {
+    --text-5xl: 3.25rem;
+    --text-4xl: 2.75rem;
+    --text-3xl: 2rem;
+    --section-padding-y: var(--space-16);
+  }
+}
+
+/* 1024px — tablet landscape */
+@media (max-width: 1024px) {
+  :root {
+    --text-5xl: 2.75rem;
+    --text-4xl: 2.25rem;
+    --text-3xl: 1.875rem;
+    --section-padding-y: var(--space-12);
+  }
+}
+
+/* 768px — tablet portrait */
+@media (max-width: 768px) {
+  :root {
+    --text-5xl: 2.25rem;
+    --text-4xl: 1.875rem;
+    --text-3xl: 1.5rem;
+    --text-2xl: 1.375rem;
+    --section-padding-y: var(--space-10);
+    --container-padding-x: var(--space-5);
+  }
+}
+
+/* 480px — mobile grande */
+@media (max-width: 480px) {
+  :root {
+    --text-5xl: 1.875rem;
+    --text-4xl: 1.5rem;
+    --text-3xl: 1.375rem;
+    --section-padding-y: var(--space-8);
+    --container-padding-x: var(--space-4);
+  }
+}
+
+/* 360px — mobile pequeño */
+@media (max-width: 360px) {
+  :root {
+    --container-padding-x: var(--space-3);
+    --text-base: 0.9375rem; /* 15px */
+  }
+}
+
+/* --------------------------------------------------
+   Layout helpers responsive
+-------------------------------------------------- */
+
+/* Ocultar en rangos específicos */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop { display: none !important; }
+}
+
+@media (max-width: 1024px) {
+  .hide-tablet-down { display: none !important; }
+}
+
+/* --------------------------------------------------
+   Ajustes de touch targets (accesibilidad móvil)
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .btn,
+  .pagination__item,
+  .filter-tab {
+    min-height: 44px;
+  }
+}
+
+/* --------------------------------------------------
+   Imágenes y media responsive
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .footer-map iframe {
+    height: 180px;
+  }
+}
+
+/* --------------------------------------------------
+   Print styles básicos
+-------------------------------------------------- */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .footer-cta,
+  .cta-section,
+  .hero__scroll-indicator {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-inline: 0;
+  }
+}
