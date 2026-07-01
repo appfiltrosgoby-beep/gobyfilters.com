@@ -47,7 +47,7 @@
   --color-bg-secondary:   var(--color-gray-50);
   --color-bg-dark:        var(--color-primary);
   --color-bg-overlay:     rgba(11, 45, 92, 0.85);
-  --color-surface:        #14213A;   /* Cards, header, inputs */
+  --color-surface:        #1E2E4A;   /* Cards, header, inputs */
 
   /* --------------------------------------------------
      TIPOGRAFÍA
