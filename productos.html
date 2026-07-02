@@ -105,7 +105,7 @@
     <!-- HERO -->
     <section class="hero hero--small" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true">
-        <img src="assets/images/banners/productos-hero.jpg" alt="" class="hero__bg-image" width="1920" height="600" fetchpriority="high">
+        <img src="assets/images/banners/productos.png" alt="" class="hero__bg-image" width="1920" height="600" fetchpriority="high">
         <div class="hero__bg-overlay"></div>
       </div>
       <div class="hero__inner">
@@ -152,25 +152,6 @@
               <option value="az">A → Z</option>
               <option value="za">Z → A</option>
             </select>
-          </div>
-
-          <div class="view-toggle" role="group" aria-label="Vista del catálogo">
-            <button class="view-toggle__btn view-toggle__btn--active" data-view="grid" aria-pressed="true" aria-label="Vista cuadrícula">
-              <svg class="view-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-                <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
-              </svg>
-            </button>
-            <button class="view-toggle__btn" data-view="list" aria-pressed="false" aria-label="Vista lista">
-              <svg class="view-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
-                <line x1="8" y1="6"  x2="21" y2="6"/>
-                <line x1="8" y1="12" x2="21" y2="12"/>
-                <line x1="8" y1="18" x2="21" y2="18"/>
-                <line x1="3" y1="6"  x2="3.01" y2="6"/>
-                <line x1="3" y1="12" x2="3.01" y2="12"/>
-                <line x1="3" y1="18" x2="3.01" y2="18"/>
-              </svg>
-            </button>
           </div>
         </div>
 
@@ -219,7 +200,7 @@
 
         <!-- Grid de productos -->
         <div
-          class="cards-grid cards-grid--4"
+          class="cards-grid products-grid--list"
           id="catalog-heading"
           data-products-grid
           role="list"

@@ -1,7 +1,7 @@
 /**
  * GOBY FILTERS — Catálogo de Productos
- * Filtrado por categoría, búsqueda en tiempo real, ordenamiento,
- * alternancia de vista grid/lista y paginación cliente.
+ * Filtrado por categoría, búsqueda en tiempo real, ordenamiento
+ * y paginación cliente.
  */
 
 const Products = (() => {
@@ -12,7 +12,6 @@ const Products = (() => {
     query:    '',
     category: 'all',
     sort:     'default',
-    view:     'grid',
     page:     1,
   };
 
@@ -206,22 +205,6 @@ const Products = (() => {
   }
 
   // --------------------------------------------------
-  // Vista grid / lista
-  // --------------------------------------------------
-
-  function setView(view) {
-    if (!grid) return;
-    state.view = view;
-    grid.classList.toggle('products-grid--list', view === 'list');
-
-    document.querySelectorAll('.view-toggle__btn').forEach((btn) => {
-      const isActive = btn.dataset.view === view;
-      btn.classList.toggle('view-toggle__btn--active', isActive);
-      btn.setAttribute('aria-pressed', String(isActive));
-    });
-  }
-
-  // --------------------------------------------------
   // Toolbar sticky shadow
   // --------------------------------------------------
 
@@ -307,11 +290,6 @@ const Products = (() => {
         applyFilters();
       });
     }
-
-    // Toggle vista
-    document.querySelectorAll('.view-toggle__btn').forEach((btn) => {
-      btn.addEventListener('click', () => setView(btn.dataset.view));
-    });
 
     initToolbarShadow();
 

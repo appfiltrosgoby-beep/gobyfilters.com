@@ -296,7 +296,7 @@
 
   const Products = (() => {
     const PAGE_SIZE = 12;
-    let state = { query: '', category: 'all', sort: 'default', view: 'grid', page: 1 };
+    let state = { query: '', category: 'all', sort: 'default', page: 1 };
     let cards = [], visibleCards = [];
     let searchInput, countEl, emptyEl, grid, paginationEl, liveRegion;
 
@@ -363,17 +363,6 @@
       });
     }
 
-    function setView(view) {
-      if (!grid) return;
-      state.view = view;
-      grid.classList.toggle('products-grid--list', view === 'list');
-      document.querySelectorAll('.view-toggle__btn').forEach((btn) => {
-        const active = btn.dataset.view === view;
-        btn.classList.toggle('view-toggle__btn--active', active);
-        btn.setAttribute('aria-pressed', String(active));
-      });
-    }
-
     function init() {
       grid         = document.querySelector('[data-products-grid]');
       searchInput  = document.querySelector('[data-products-search]');
@@ -406,7 +395,6 @@
       });
       const sortSelect = document.querySelector('[data-products-sort]');
       if (sortSelect) sortSelect.addEventListener('change', () => { state.sort = sortSelect.value; applyFilters(); });
-      document.querySelectorAll('.view-toggle__btn').forEach((btn) => btn.addEventListener('click', () => setView(btn.dataset.view)));
       applyFilters();
     }
 

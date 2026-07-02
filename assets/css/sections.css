@@ -1233,50 +1233,6 @@
   box-shadow: 0 0 0 3px rgba(30, 118, 197, 0.12);
 }
 
-/* Botón toggle de vista (grid/lista) */
-.view-toggle {
-  display: flex;
-  border: 1px solid var(--border-color-dark);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.view-toggle__btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  background-color: var(--color-surface);
-  border: none;
-  cursor: pointer;
-  color: var(--color-gray-300);
-  transition: var(--transition-base);
-}
-
-.view-toggle__btn:hover {
-  background-color: var(--color-gray-50);
-  color: var(--color-gray-500);
-}
-
-.view-toggle__btn--active {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.view-toggle__btn:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: -2px;
-}
-
-.view-toggle__icon {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2;
-}
-
 /* Barra de categorías */
 .products-cats {
   padding-block: var(--space-5);
@@ -1355,14 +1311,14 @@
   line-height: var(--leading-relaxed);
 }
 
-/* Vista lista — variante del card */
+/* Vista lista — producto completo, sin recortar texto */
 .products-grid--list .card--product {
   flex-direction: row;
   align-items: stretch;
 }
 
 .products-grid--list .card--product .card__image-wrap {
-  width: 200px;
+  width: 360px;
   flex-shrink: 0;
   aspect-ratio: auto;
   height: auto;
@@ -1370,13 +1326,19 @@
 
 .products-grid--list .card--product .card__body {
   flex: 1;
-  padding: var(--space-6);
+  padding: var(--space-8);
+}
+
+.products-grid--list .card--product .card__description {
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
 }
 
 .products-grid--list .card--product .card__footer {
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--space-4) var(--space-6);
+  padding: var(--space-4) var(--space-8);
 }
 
 /* Animación cuando se ocultan/muestran productos */
@@ -1426,6 +1388,11 @@
     width: 100%;
     aspect-ratio: 4 / 3;
   }
+
+  .products-grid--list .card--product .card__body,
+  .products-grid--list .card--product .card__footer {
+    padding-inline: var(--space-5);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1434,10 +1401,6 @@
   }
 
   .products-sort__label {
-    display: none;
-  }
-
-  .view-toggle {
     display: none;
   }
 }
