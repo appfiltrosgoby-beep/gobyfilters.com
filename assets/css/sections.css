@@ -1607,6 +1607,16 @@
   max-width: 800px;
 }
 
+.legal-doc__body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-4);
+}
+
 .legal-doc__body h3 {
   font-family: var(--font-secondary);
   font-size: var(--text-lg);
