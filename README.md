@@ -98,3 +98,7 @@ Los JS con `wp_enqueue_script()` usando `type="module"`.
 - [ ] Contacta un distribuidor
 - [ ] Recursos y herramientas
 "# prueba_gofilters" 
+
+## worpress
+administrador
+Carlos@2026*
