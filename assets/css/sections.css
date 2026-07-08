@@ -1538,7 +1538,9 @@
 
 .legal-doc__header {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: var(--space-5);
   margin-bottom: var(--space-8);
 }
@@ -1580,6 +1582,7 @@
 .legal-doc__meta {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-4);
   font-size: var(--text-sm);
   color: var(--color-gray-400);
@@ -1605,6 +1608,7 @@
 /* Prose content inside legal documents */
 .legal-doc__body {
   max-width: 800px;
+  margin-inline: auto;
 }
 
 .legal-doc__body img {
@@ -1626,6 +1630,7 @@
   margin-bottom: var(--space-3);
   padding-bottom: var(--space-2);
   border-bottom: 2px solid var(--color-gray-100);
+  
 }
 
 .legal-doc__body p {
@@ -1633,6 +1638,7 @@
   color: var(--color-gray-600);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-4);
+  text-align: justify;
 }
 
 .legal-doc__body ul,
@@ -1670,6 +1676,56 @@
   transition: var(--transition-color);
 }
 
+.legal-doc__table-wrap {
+  overflow-x: auto;
+  margin-bottom: var(--space-6);
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-lg);
+}
+
+.legal-doc__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-base);
+}
+
+.legal-doc__table tr {
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.legal-doc__table tr:last-child {
+  border-bottom: none;
+}
+
+.legal-doc__table th,
+.legal-doc__table td {
+  padding: var(--space-3) var(--space-5);
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Encabezados de fila (scope="row") mantienen ancho y estilo específico */
+.legal-doc__table th[scope="row"] {
+  width: 240px;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-heading);
+  font-weight: var(--font-semibold);
+}
+
+/* Encabezado de tabla (thead) — destacar sobre el cuerpo */
+.legal-doc__table thead th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: var(--font-semibold);
+  padding: calc(var(--space-3) + 2px) var(--space-5);
+  text-transform: none;
+  border-bottom: 1px solid var(--border-color-dark);
+}
+
+.legal-doc__table td {
+  color: var(--color-gray-600);
+}
+
 .legal-doc__body a:hover {
   color: var(--color-heading);
 }
@@ -1685,6 +1741,55 @@
 .legal-highlight p {
   margin-bottom: 0 !important;
   font-size: var(--text-sm) !important;
+}
+
+/* --------------------------------------------------
+   Product catalog small boxed table (used in legal docs)
+-------------------------------------------------- */
+.product-catalog {
+  margin: var(--space-6) 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+}
+
+.product-catalog__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.product-catalog__table thead th {
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+  padding: var(--space-3) var(--space-4);
+  font-weight: var(--font-semibold);
+  text-align: center;
+}
+
+.product-catalog__table tbody td {
+  padding: var(--space-4);
+  color: var(--color-gray-600);
+  vertical-align: top;
+  border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 640px) {
+  .product-catalog__table thead {
+    display: none;
+  }
+  .product-catalog__table, .product-catalog__table tbody, .product-catalog__table tr, .product-catalog__table td {
+    display: block;
+    width: 100%;
+  }
+  .product-catalog__table td {
+    padding: var(--space-3) var(--space-4);
+    border-top: none;
+  }
+  .product-catalog__table td + td {
+    border-top: 1px solid var(--border-color);
+  }
 }
 
 /* --------------------------------------------------
