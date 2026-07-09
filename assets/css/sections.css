@@ -775,6 +775,10 @@
   gap: var(--space-4);
 }
 
+.split-section__body p {
+  text-align: justify;
+}
+
 /* Quote destacada */
 .split-section__quote {
   position: relative;
