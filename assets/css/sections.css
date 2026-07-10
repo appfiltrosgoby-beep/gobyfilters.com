@@ -814,7 +814,7 @@
 
 .mv-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
 }
 
@@ -913,6 +913,12 @@
 
 .mv-card--vision .mv-card__description {
   color: var(--color-gray-500);
+}
+
+@media (max-width: 1024px) {
+  .mv-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 768px) {
