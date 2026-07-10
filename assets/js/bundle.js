@@ -520,6 +520,7 @@
     if (!form) return;
 
     const successEl  = document.getElementById('pqr-success');
+    const errorEl    = document.getElementById('pqr-error');
     const radicadoEl = document.getElementById('pqr-radicado');
     const requiredFields = form.querySelectorAll('[required]');
 
@@ -556,17 +557,32 @@
       }
 
       const submitBtn = form.querySelector('[type="submit"]');
+      const submitBtnLabel = submitBtn.textContent;
       submitBtn.disabled = true;
       submitBtn.textContent = 'Enviando…';
+      if (errorEl) errorEl.hidden = true;
 
-      /* Simulate async dispatch — replace with real fetch() in WordPress */
-      setTimeout(() => {
-        const radicado = 'GOBY-' + new Date().getFullYear() + '-' + String(Date.now()).slice(-6);
-        if (radicadoEl) radicadoEl.textContent = radicado;
-        form.hidden = true;
-        if (successEl) successEl.hidden = false;
-        successEl?.focus();
-      }, 1200);
+      fetch('pqr-handler.php', {
+        method: 'POST',
+        body: new FormData(form),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (!data.success) throw new Error(data.message || 'Error al enviar.');
+
+          if (radicadoEl) radicadoEl.textContent = data.radicado || '';
+          form.hidden = true;
+          if (successEl) successEl.hidden = false;
+          successEl?.focus();
+        })
+        .catch(() => {
+          if (errorEl) {
+            errorEl.hidden = false;
+            errorEl.focus();
+          }
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtnLabel;
+        });
     });
   }
 

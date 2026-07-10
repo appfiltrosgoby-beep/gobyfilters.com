@@ -498,6 +498,15 @@
   margin-top: 1px;
 }
 
+.form-success--error {
+  background-color: rgba(220, 53, 69, 0.08);
+  border-color: rgba(220, 53, 69, 0.3);
+}
+
+.form-success--error svg {
+  stroke: var(--color-error);
+}
+
 /* Checkbox y radio */
 .form-check {
   display: flex;
