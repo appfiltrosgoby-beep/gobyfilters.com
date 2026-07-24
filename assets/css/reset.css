@@ -57,6 +57,10 @@ h6 {
   overflow-wrap: break-word;
 }
 
+p {
+  text-align: justify;
+}
+
 h1,
 h2,
 h3,
