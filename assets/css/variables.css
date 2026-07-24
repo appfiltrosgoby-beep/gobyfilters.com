@@ -16,10 +16,14 @@
   --color-primary-light:  #1565C0;   /* Azul corporativo medio */
   --color-accent:         #1A73E8;   /* Azul acento / links */
 
-  /* Verde WhatsApp / Acción */
+  /* Verde WhatsApp / Acción (uso exclusivo del botón de WhatsApp) */
   --color-whatsapp:       #25D366;
   --color-whatsapp-dark:  #1DA851;
   --color-success:        #25D366;
+
+  /* Dorado — detalles y acentos decorativos */
+  --color-gold:           #D4AF37;
+  --color-gold-dark:      #B8952E;
 
   /* Neutros (escala invertida para tema oscuro) */
   --color-white:          #FFFFFF;

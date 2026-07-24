@@ -77,7 +77,7 @@
 }
 
 .eyebrow--green {
-  color: var(--color-whatsapp);
+  color: var(--color-gold);
 }
 
 /* Heading section */
@@ -133,7 +133,7 @@
   display: block;
   width: 48px;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-whatsapp));
+  background: linear-gradient(90deg, var(--color-accent), var(--color-gold));
   border-radius: var(--radius-full);
   margin-block: var(--space-4);
 }

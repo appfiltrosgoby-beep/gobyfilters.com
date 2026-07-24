@@ -83,7 +83,7 @@
   font-weight: var(--font-semibold);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: var(--color-whatsapp);
+  color: var(--color-gold);
   margin-bottom: var(--space-4);
 }
 
@@ -201,7 +201,7 @@
   background: linear-gradient(
     to bottom,
     var(--color-accent),
-    var(--color-whatsapp)
+    var(--color-gold)
   );
   border-radius: var(--radius-full);
 }
@@ -490,7 +490,7 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  stroke: var(--color-whatsapp);
+  stroke: var(--color-gold);
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
@@ -1094,7 +1094,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: var(--color-whatsapp);
+  background-color: var(--color-gold);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -1154,7 +1154,7 @@
 
 .why-stat__number mark {
   background: none;
-  color: var(--color-whatsapp);
+  color: var(--color-gold);
 }
 
 .why-stat__label {

@@ -43,7 +43,7 @@
   font-weight: var(--font-semibold);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: var(--color-whatsapp);
+  color: var(--color-gold);
   margin-bottom: var(--space-3);
 }
 
@@ -200,7 +200,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: var(--color-whatsapp);
+  background-color: var(--color-gold);
   flex-shrink: 0;
   opacity: 0;
   transform: translateX(-4px);
@@ -244,7 +244,7 @@
 .footer-contact__icon {
   width: 16px;
   height: 16px;
-  stroke: var(--color-whatsapp);
+  stroke: var(--color-gold);
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
