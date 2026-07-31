@@ -88,6 +88,20 @@
   margin-bottom: var(--space-3);
 }
 
+.card--product .card__body > .btn {
+  align-self: flex-start;
+  margin-top: var(--space-4);
+}
+
+.card--product .card__subtitle {
+  font-family: var(--font-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-accent);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-1);
+}
+
 .card--product .card__description {
   font-size: var(--text-sm);
   color: var(--color-gray-500);
