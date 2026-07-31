@@ -85,23 +85,87 @@
 
       <nav class="site-nav" id="main-nav" aria-label="Navegación principal">
         <ul class="site-nav__list" role="list">
-          <li class="site-nav__item">
-            <a href="index.html" class="site-nav__link">Inicio</a>
+          <li class="site-nav__item site-nav__item--dropdown">
+            <div class="site-nav__link-row">
+              <a href="index.html" class="site-nav__link">Inicio</a>
+              <button type="button" class="site-nav__dropdown-toggle" aria-expanded="false" aria-label="Mostrar submenú de Inicio">
+                <svg class="site-nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+            </div>
+            <ul class="site-nav__dropdown">
+              <li><a href="index.html#products-title" class="site-nav__dropdown-link">Productos destacados</a></li>
+              <li><a href="index.html#features-title" class="site-nav__dropdown-link">¿Por qué elegirnos?</a></li>
+              <li><a href="index.html#sectors-title" class="site-nav__dropdown-link">Sectores que atendemos</a></li>
+              <li><a href="index.html#clients-title" class="site-nav__dropdown-link">Nuestros clientes</a></li>
+            </ul>
           </li>
-          <li class="site-nav__item">
-            <a href="nosotros.html" class="site-nav__link site-nav__link--active" aria-current="page">Nosotros</a>
+          <li class="site-nav__item site-nav__item--dropdown">
+            <div class="site-nav__link-row">
+              <a href="nosotros.html" class="site-nav__link site-nav__link--active" aria-current="page">Nosotros</a>
+              <button type="button" class="site-nav__dropdown-toggle" aria-expanded="false" aria-label="Mostrar submenú de Nosotros">
+                <svg class="site-nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+            </div>
+            <ul class="site-nav__dropdown">
+              <li><a href="nosotros.html#quienes-title" class="site-nav__dropdown-link">Quiénes somos</a></li>
+              <li><a href="nosotros.html#mv-title" class="site-nav__dropdown-link">Misión y visión</a></li>
+              <li><a href="nosotros.html#valores-title" class="site-nav__dropdown-link">Nuestros valores</a></li>
+              <li><a href="nosotros.html#why-title" class="site-nav__dropdown-link">¿Por qué elegirnos?</a></li>
+            </ul>
           </li>
-          <li class="site-nav__item">
-            <a href="productos.html" class="site-nav__link">Productos</a>
+          <li class="site-nav__item site-nav__item--dropdown">
+            <div class="site-nav__link-row">
+              <a href="productos.html" class="site-nav__link">Productos</a>
+              <button type="button" class="site-nav__dropdown-toggle" aria-expanded="false" aria-label="Mostrar submenú de Productos">
+                <svg class="site-nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+            </div>
+            <ul class="site-nav__dropdown">
+              <li><a href="productos.html#filtracion-vehicular" class="site-nav__dropdown-link">Filtración Vehicular</a></li>
+              <li><a href="productos.html#filtracion-industrial" class="site-nav__dropdown-link">Filtración Industrial</a></li>
+              <li><a href="productos.html#asesorias-mantenimiento" class="site-nav__dropdown-link">Asesorías de Mantenimiento</a></li>
+              <li><a href="productos.html#cajas-carton" class="site-nav__dropdown-link">Cajas de Cartón</a></li>
+            </ul>
           </li>
-          <li class="site-nav__item">
-            <a href="avisos-legales.html" class="site-nav__link">Avisos legales</a>
+          <li class="site-nav__item site-nav__item--dropdown">
+            <div class="site-nav__link-row">
+              <a href="avisos-legales.html" class="site-nav__link">Avisos legales</a>
+              <button type="button" class="site-nav__dropdown-toggle" aria-expanded="false" aria-label="Mostrar submenú de Avisos legales">
+                <svg class="site-nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+            </div>
+            <ul class="site-nav__dropdown">
+              <li><a href="avisos-legales.html#aviso-legal" class="site-nav__dropdown-link">Aviso Legal</a></li>
+              <li><a href="avisos-legales.html#privacidad" class="site-nav__dropdown-link">Política de Datos</a></li>
+              <li><a href="avisos-legales.html#terminos" class="site-nav__dropdown-link">Términos y Condiciones</a></li>
+              <li><a href="avisos-legales.html#politica-garantia" class="site-nav__dropdown-link">Política de Garantías</a></li>
+              <li><a href="avisos-legales.html#pqr" class="site-nav__dropdown-link">PQR</a></li>
+            </ul>
           </li>
-          <li class="site-nav__item">
-            <a href="distribuidor.html" class="site-nav__link">Contacta un distribuidor</a>
+          <li class="site-nav__item site-nav__item--dropdown">
+            <div class="site-nav__link-row">
+              <a href="distribuidor.html" class="site-nav__link">Contacta un distribuidor</a>
+              <button type="button" class="site-nav__dropdown-toggle" aria-expanded="false" aria-label="Mostrar submenú de Contacta un distribuidor">
+                <svg class="site-nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+            </div>
+            <ul class="site-nav__dropdown">
+              <li><a href="distribuidor.html#distribuidores-title" class="site-nav__dropdown-link">Encuentra tu distribuidor</a></li>
+              <li><a href="distribuidor.html#cta-dist-heading" class="site-nav__dropdown-link">¿No encuentras uno cerca?</a></li>
+            </ul>
           </li>
-          <li class="site-nav__item">
-            <a href="recursos.html" class="site-nav__link">Herramientas</a>
+          <li class="site-nav__item site-nav__item--dropdown">
+            <div class="site-nav__link-row">
+              <a href="recursos.html" class="site-nav__link">Herramientas</a>
+              <button type="button" class="site-nav__dropdown-toggle" aria-expanded="false" aria-label="Mostrar submenú de Herramientas">
+                <svg class="site-nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+            </div>
+            <ul class="site-nav__dropdown">
+              <li><a href="recursos.html#tools-title" class="site-nav__dropdown-link">Herramientas digitales</a></li>
+              <li><a href="recursos.html#documentos-informativos" class="site-nav__dropdown-link">Documentos informativos</a></li>
+              <li><a href="recursos.html#cta-tools-heading" class="site-nav__dropdown-link">¿Necesitas ayuda?</a></li>
+            </ul>
           </li>
         </ul>
 

@@ -141,6 +141,42 @@ const Header = (() => {
   }
 
   // --------------------------------------------------
+  // Submenús de navegación
+  // --------------------------------------------------
+
+  function closeAllDropdowns(except) {
+    document.querySelectorAll('.site-nav__item--dropdown').forEach((item) => {
+      if (item === except) return;
+      item.classList.remove('is-open');
+      item.querySelector('.site-nav__dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function initDropdowns() {
+    const items = document.querySelectorAll('.site-nav__item--dropdown');
+    items.forEach((item) => {
+      const toggle = item.querySelector('.site-nav__dropdown-toggle');
+      if (!toggle) return;
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = item.classList.contains('is-open');
+        closeAllDropdowns(item);
+        item.classList.toggle('is-open', !isOpen);
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.site-nav__item--dropdown')) closeAllDropdowns();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAllDropdowns();
+    });
+  }
+
+  // --------------------------------------------------
   // Init
   // --------------------------------------------------
 
@@ -157,6 +193,9 @@ const Header = (() => {
     // Sticky
     window.addEventListener('scroll', onScroll, { passive: true });
     updateStickyState();
+
+    // Submenús
+    initDropdowns();
 
     // Menú móvil
     if (burger && nav) {
@@ -181,7 +220,7 @@ const Header = (() => {
       }, { passive: true });
 
       // Cerrar al clickar un enlace del menú móvil
-      nav.querySelectorAll('.site-nav__link').forEach((link) => {
+      nav.querySelectorAll('.site-nav__link, .site-nav__dropdown-link').forEach((link) => {
         link.addEventListener('click', () => {
           if (window.innerWidth <= 1024) {
             closeMenu();
